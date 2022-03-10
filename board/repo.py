@@ -6,7 +6,6 @@ class Board():
         self.__board = np.zeros((6, 7))
 
     def get_board(self):
-
         return self.__board[:]
 
     def drp(self, col, row, value):

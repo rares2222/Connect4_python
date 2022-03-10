@@ -40,28 +40,40 @@ class UI:
 
     def run(self):
         turn = 0
+        k=0
         while True:
 
             if turn == 0:  # Player 1
+
+
                 try:
                     self.__ui_player1()
                     turn += 1
+                    k = k + 1
                 except ValueError as ve:
                     print(ve)
                 self.__ui_print_board()
                 if self.__ui_winning_move_player1():
                     print("player 1 wins!!!!!!")
                     return
-
+                if k == 42:
+                    print("tie")
+                    return
+                print(k)
             if turn == 1:  # Player 2
                 try:
                     self.__ui_player2()
                     turn += 1
-
+                    k = k + 1
                 except ValueError as ve:
                     print(ve)
                 self.__ui_print_board()
                 if self.__ui_winning_move_player2():
                     print("player 2 wins!!!!!!")
                     return
+                if k == 42:
+                    print("tie")
+                    return
+                print(k)
             turn = turn % 2
+
